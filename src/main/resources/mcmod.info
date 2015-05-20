@@ -1,0 +1,16 @@
+[
+{
+  "modid": "glue",
+  "name": "Glue",
+  "description": "Debugging Mod",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "www.nationsatwar.org",
+  "updateUrl": "",
+  "authorList": ["Aculem"],
+  "credits": "The Nations at War staff.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
