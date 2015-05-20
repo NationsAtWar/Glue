@@ -1,7 +1,5 @@
 package org.nationsatwar.glue;
 
-import org.nationsatwar.glue.proxy.CommonProxy;
-
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -10,7 +8,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
+
+import org.nationsatwar.glue.proxy.CommonProxy;
 
 @Mod(modid = Glue.MODID, 
 	name = Glue.MODNAME, 
@@ -23,8 +22,8 @@ public class Glue {
 	@SidedProxy(clientSide = Glue.CLIENT_PROXY_CLASS, serverSide = Glue.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
 	
-	public static final String MODID = "clowns";
-	public static final String MODNAME = "Clowns";
+	public static final String MODID = "glue";
+	public static final String MODNAME = "Glue";
 	public static final String MODVER = "0.0.1";
 	
 	public static final String CLIENT_PROXY_CLASS = "org.nationsatwar.glue.proxy.ClientProxy";
