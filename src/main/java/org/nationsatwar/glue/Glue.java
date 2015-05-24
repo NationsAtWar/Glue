@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
+import org.nationsatwar.glue.guildmaster.GuildMasterNPC;
 import org.nationsatwar.glue.proxy.CommonProxy;
 
 @Mod(modid = Glue.MODID, 
@@ -44,7 +45,7 @@ public class Glue {
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
 		
-		
+		GuildMasterNPC.createGuildMaster();
 	}
 	
 	@EventHandler
