@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
+import org.nationsatwar.glue.events.ChatCommands;
 import org.nationsatwar.glue.guildmaster.GuildMasterNPC;
 import org.nationsatwar.glue.proxy.CommonProxy;
 
@@ -51,6 +52,6 @@ public class Glue {
 	@EventHandler
 	public void commandEvent(FMLServerStartingEvent event) {
 		
-		
+		event.registerServerCommand(new ChatCommands("glue"));
 	}
 }
