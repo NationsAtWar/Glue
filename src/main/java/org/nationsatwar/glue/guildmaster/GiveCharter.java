@@ -1,12 +1,22 @@
 package org.nationsatwar.glue.guildmaster;
 
+import net.minecraft.entity.player.EntityPlayer;
+
 import org.nationsatwar.clowns.actions.CustomAction;
+import org.nationsatwar.clowns.entities.GenericNPC;
+import org.nationsatwar.glue.items.nationcharter.NationCharterItem;
+import org.nationsatwar.palette.ItemHelper;
 
 public class GiveCharter extends CustomAction {
 
-	@Override
-	public void fireAction() {
+	public GiveCharter(GenericNPC npc) {
 		
-		System.out.println("Do your shit here");
+		super(npc);
+	}
+
+	@Override
+	public void fireAction(EntityPlayer player) {
+		
+		ItemHelper.giveItemToPlayer(player, NationCharterItem.instance, 1);
 	}
 }

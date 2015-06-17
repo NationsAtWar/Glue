@@ -1,5 +1,8 @@
 package org.nationsatwar.glue;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -11,7 +14,9 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
 import org.nationsatwar.glue.events.ChatCommands;
 import org.nationsatwar.glue.guildmaster.GuildMasterNPC;
+import org.nationsatwar.glue.items.nationcharter.NationCharterItem;
 import org.nationsatwar.glue.proxy.CommonProxy;
+import org.nationsatwar.toychest.items.Toy;
 
 @Mod(modid = Glue.MODID, 
 	name = Glue.MODNAME, 
@@ -31,6 +36,8 @@ public class Glue {
 	public static final String CLIENT_PROXY_CLASS = "org.nationsatwar.glue.proxy.ClientProxy";
 	public static final String SERVER_PROXY_CLASS = "org.nationsatwar.glue.proxy.CommonProxy";
 	
+	private static final Logger log = Logger.getLogger("Minecraft");
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		
@@ -46,12 +53,26 @@ public class Glue {
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
 		
+		// Register NPCs
 		GuildMasterNPC.createGuildMaster();
+		
+		// Register Items
+		Toy.register(new NationCharterItem("nationcharter"), MODID);
 	}
 	
 	@EventHandler
 	public void commandEvent(FMLServerStartingEvent event) {
 		
 		event.registerServerCommand(new ChatCommands("glue"));
+	}
+	
+	/**
+	 * Mod logger handler. Useful for debugging.
+	 * 
+	 * @param logMessage  Message to send to the console.
+	 */
+	public static void log(String logMessage) {
+		
+		log.log(Level.INFO, logMessage);
 	}
 }

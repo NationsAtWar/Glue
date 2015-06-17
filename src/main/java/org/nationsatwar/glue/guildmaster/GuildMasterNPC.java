@@ -16,7 +16,7 @@ public class GuildMasterNPC extends GenericNPC {
 		
 		super(worldIn, name);
 		
-		addCustomAction("Charter", new GiveCharter());
+		addCustomAction("Charter", new GiveCharter(this));
 	}
 	
 	public static void createGuildMaster() {

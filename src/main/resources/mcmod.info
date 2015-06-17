@@ -2,7 +2,7 @@
 {
   "modid": "glue",
   "name": "Glue",
-  "description": "Debugging Mod",
+  "description": "Nations at War Mod",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "www.nationsatwar.org",
